@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "158898518103",
+    "project_id": "goldenowl-mavental",
+    "storage_bucket": "goldenowl-mavental.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158898518103:android:ea7d67bfa6f4c022544b12",
+        "android_client_info": {
+          "package_name": "com.maverick.go.mavental"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158898518103-jh3spp70kmfeoo6a027udqokh0ealphe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTtxnrphBRcXdq0oJjemEEE78Z5BHACyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158898518103-jh3spp70kmfeoo6a027udqokh0ealphe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "158898518103-1m5n0vbiujj5arbrdb8srituad598s0s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.maverick.go.mavental"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
