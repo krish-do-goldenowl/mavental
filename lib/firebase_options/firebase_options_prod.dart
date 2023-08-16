@@ -48,17 +48,17 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyDLqjBobFKJ3hgv7xvfRPz-7zANVIiEJAA',
-    appId: '1:158898518103:web:7cffa7267f4e9ddf544b12',
+    appId: '1:158898518103:web:0a7e841cec8dc2c5544b12',
     messagingSenderId: '158898518103',
     projectId: 'goldenowl-mavental',
     authDomain: 'goldenowl-mavental.firebaseapp.com',
     storageBucket: 'goldenowl-mavental.appspot.com',
-    measurementId: 'G-TN6X2GE46S',
+    measurementId: 'G-9N5GQ0H8SH',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDTtxnrphBRcXdq0oJjemEEE78Z5BHACyo',
-    appId: '1:158898518103:android:ea7d67bfa6f4c022544b12',
+    appId: '1:158898518103:android:243bff88f559e7a6544b12',
     messagingSenderId: '158898518103',
     projectId: 'goldenowl-mavental',
     storageBucket: 'goldenowl-mavental.appspot.com',
@@ -66,7 +66,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBbjnIWoGH8Sa8utPPtfajtJem62j4638o',
-    appId: '1:158898518103:ios:a5c4c4773bf157f1544b12',
+    appId: '1:158898518103:ios:ffbaebd452266135544b12',
     messagingSenderId: '158898518103',
     projectId: 'goldenowl-mavental',
     storageBucket: 'goldenowl-mavental.appspot.com',
