@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../router/route_name.dart';
+import 'package:mavental/src/router/route_name.dart';
 
 int _tapCount = 0;
 

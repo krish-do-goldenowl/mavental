@@ -15,7 +15,7 @@ import 'package:mavental/src/network/model/social_user/social_user.dart';
 import 'package:mavental/src/network/model/user/user.dart';
 import 'package:mavental/src/router/coordinator.dart';
 
-import '../../../network/model/common/result.dart';
+import 'package:mavental/src/network/model/common/result.dart';
 
 part 'signin_state.dart';
 

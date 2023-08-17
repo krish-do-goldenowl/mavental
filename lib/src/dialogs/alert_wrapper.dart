@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mavental/src/dialogs/widget/alert_dialog.dart';
 import 'package:mavental/src/router/coordinator.dart';
 
-import '../localization/localization_utils.dart';
+import 'package:mavental/src/localization/localization_utils.dart';
 
 class XAlert {
   static get context => AppCoordinator.context;

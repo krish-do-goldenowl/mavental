@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
-import '../../../localization/localization_utils.dart';
+import 'package:mavental/src/localization/localization_utils.dart';
 
 enum XMethod {
   get,

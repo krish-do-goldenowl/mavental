@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-import '../../src/network/model/common/handle.dart';
-import '../../src/network/model/common/pagination/pagination.dart';
-import '../common/indicator.dart';
+import 'package:mavental/src/network/model/common/handle.dart';
+import 'package:mavental/src/network/model/common/pagination/pagination.dart';
+import 'package:mavental/widgets/common/indicator.dart';
 
 class XStatePaginationWidget extends StatefulWidget {
   const XStatePaginationWidget({

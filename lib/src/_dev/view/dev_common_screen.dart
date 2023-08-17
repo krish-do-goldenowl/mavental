@@ -3,15 +3,15 @@ import 'package:mavental/src/features/common/view/not_found_view.dart';
 import 'package:mavental/src/features/common/view/webview/web_view.dart';
 import 'package:mavental/widgets/button/button.dart';
 
-import '../../../gen/assets.gen.dart';
-import '../../../widgets/state/state_empty_widget.dart';
-import '../../../widgets/state/state_error_widget.dart';
-import '../../../widgets/state/state_loading_widget.dart';
-import '../../dialogs/toast_wrapper.dart';
-import '../../localization/localization_utils.dart';
-import '../widget/dev_button_title.dart';
-import '../widget/dev_navigation_title.dart';
-import '../widget/dev_screen_layout.dart';
+import 'package:mavental/gen/assets.gen.dart';
+import 'package:mavental/widgets/state/state_empty_widget.dart';
+import 'package:mavental/widgets/state/state_error_widget.dart';
+import 'package:mavental/widgets/state/state_loading_widget.dart';
+import 'package:mavental/src/dialogs/toast_wrapper.dart';
+import 'package:mavental/src/localization/localization_utils.dart';
+import 'package:mavental/src/_dev/widget/dev_button_title.dart';
+import 'package:mavental/src/_dev/widget/dev_navigation_title.dart';
+import 'package:mavental/src/_dev/widget/dev_screen_layout.dart';
 
 class DevCommonScreen extends StatelessWidget {
   const DevCommonScreen({super.key});

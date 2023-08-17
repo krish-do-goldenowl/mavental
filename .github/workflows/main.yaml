@@ -48,6 +48,10 @@ jobs:
         shell: pwsh
       
       # --- Flutter Build ---
+      - name: Get Dependencies
+        run: flutter pub get
+        shell: pwsh
+
       - id: flutter-build
         name: Flutter Build
         run: |

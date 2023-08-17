@@ -1,7 +1,7 @@
 import 'package:permission_handler/permission_handler.dart';
 
-import '../config/devices/app_info.dart';
-import '../dialogs/alert_wrapper.dart';
+import 'package:mavental/src/config/devices/app_info.dart';
+import 'package:mavental/src/dialogs/alert_wrapper.dart';
 
 class PermissionService {
   static Future<bool> requestMicrophonePermission(
@@ -19,6 +19,4 @@ class PermissionService {
     }
     return true;
   }
-
-  
 }

@@ -9,7 +9,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:validators/validators.dart';
 
-import '../../../../theme/colors.dart';
+import 'package:mavental/src/theme/colors.dart';
 import 'model/web_menu_item.dart';
 
 class WebviewPage extends StatefulWidget {
