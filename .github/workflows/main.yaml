@@ -46,8 +46,6 @@ jobs:
       - name: Goolge Services
         run: |
             echo "${{ secrets.GOOGLE_SERVICES_ANDROID }}" | base64 --decode > android/app/src/production/google-services.json
-            echo "${{ secrets.GOOGLE_SERVICES_IOS }}" | base64 --decode > ios/config/prodcution/GoogleService-Info.plist
-            echo "${{ secrets.IOS_FIREBASE_APP_ID }}" | base64 --decode > ios/firebase_app_id_file.json
 
         shell: pwsh
       
