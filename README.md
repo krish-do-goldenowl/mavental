@@ -27,7 +27,7 @@ Project for implementing the Mavental app
 https://github.com/krish-do-goldenowl/training_minhnhat_dart_challenge.git
 ```
 
-2. Go to `mavental` directory and execute the following command in console to get the required dependencies:
+2. Go to project root directory and execute the following command in console to get the required dependencies:
 
 ```
 flutter pub get
@@ -39,15 +39,17 @@ flutter pub get
 dart (or flutter packages pub - deprecated) run build_runner build --delete-conflicting-outputs
 ```
 
-4. Connect your device
+4. Add files in `mavental_private_files` folder to the project (their locations in the project are exactly the same with their locations in the folder)
 
-5. Run staging project by using the command below
+5. Connect your device
+
+6. Run staging project by using the command below
 
 ```
 flutter run --flavor staging --target lib/main_staging.dart
 ```
 
-6. Run production project by using the command below
+7. Run production project by using the command below
 
 ```
 flutter run --flavor production --target lib/main.dart
