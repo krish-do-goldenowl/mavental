@@ -1,7 +1,7 @@
 // ignore: depend_on_referenced_packages
 import 'package:http_parser/http_parser.dart' as http_parser;
-import '../../model/common/result.dart';
-import '../model/upload_model.dart';
+import 'package:mavental/src/network/model/common/result.dart';
+import 'package:mavental/src/network/blob/model/upload_model.dart';
 import 'upload_repository.dart';
 
 class UploadRepositoryImpl extends UploadRepository {

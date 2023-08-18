@@ -1,0 +1,131 @@
+name: Gallery Widgets ACTIONS
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - "*"
+    types: [closed]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - name: clean git
+        run: |
+          if (Test-Path -Path '.git') {
+            Remove-Item '.git' -Recurse -Force
+          }
+        shell: pwsh
+
+      - name: checkout
+        uses: actions/checkout@v3
+        with: 
+          fetch-depth: '0'
+          
+      - name: setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: "oracle"
+          java-version: "17"
+      - name: setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+
+    #   - name: Decrypt key.properties
+    #     env:
+    #       PROPERTIES_PATH: "./android/upstore_credentials/key.properties"
+    #     # run: echo "$KEY_PROPERTIES" | base64 --decode > android/key.properties
+    #     run: echo "storePassword=${{ secrets.STORE_PASSWORD }}" >> ${{env.PROPERTIES_PATH}} && echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> ${{env.PROPERTIES_PATH}} && echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> ${{env.PROPERTIES_PATH}} && echo "storeFile=${{ secrets.STOREFILE }}" >> ${{env.PROPERTIES_PATH}}
+    #     working-directory: ${{ env.working-directory }}
+
+      # --- Firebase configure files ---
+      - name: Goolge Services
+        run: echo "${{ secrets.GOOGLE_SERVICES_ANDROID }}" | base64 --decode > android/app/src/production/google-services.json
+        shell: pwsh
+      
+      # --- Flutter Build ---
+      - name: Get Dependencies
+        run: flutter pub get
+        shell: pwsh
+
+      - id: flutter-build
+        name: Flutter Build
+        run: |
+          $buildCommands = 'apk'
+          $flavor = 'production'
+          $target = 'lib/main.dart'
+
+          $isRelease = '${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev' && github.event_name == 'push' }}'
+
+          $env:GIT_REDIRECT_STDERR = '2>&1'
+          $lastRelease = $(git tag | sort -V | tail -1)
+
+          Write-Host "lastRelease: $lastRelease"
+
+          if (!$lastRelease) {
+            $lastRelease = "1.0.0"
+          }
+
+          $lastReleaseSemVer = [System.Management.Automation.SemanticVersion]$lastRelease
+
+          if ($isRelease -eq 'true') {
+            $lastReleaseVersionString = $lastReleaseSemVer.ToString()
+            Write-Host "name=last-version::$lastReleaseVersionString" >> $GITHUB_OUTPUT
+            $version = [System.Management.Automation.SemanticVersion]::New($lastReleaseSemVer.Major, $lastReleaseSemVer.Minor, $lastReleaseSemVer.Patch + 1)
+          } else {
+            $version = [System.Management.Automation.SemanticVersion]::New($lastReleaseSemVer.Major, $lastReleaseSemVer.Minor, $lastReleaseSemVer.Patch, "preview.${{ github.event.number }}")
+          }
+
+          $versionString = $version.ToString()
+
+          Write-Host "Building $buildCommands $versionString"
+
+          flutter build $buildCommands --flavor $flavor --target $target --release --build-name $versionString --build-number '${{ github.run_number }}'
+          Write-Host "name=version::$versionString" >> $GITHUB_OUTPUT
+
+          if ($isRelease -eq 'true') {
+            git tag "$versionString" ${{ github.head_ref }}
+
+            git push https://$env:username:$env:CI_TOKEN@github.com/${{ github.repository }}.git "$versionString"
+          }
+        shell: pwsh
+        env:
+          CI_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          username: 'maverick-go'
+
+      - name: setup firebase cli
+        run: |
+          npm install -g firebase-tools
+          firebase --version
+        shell: pwsh
+
+      - name: Firebase App Distribution
+        run: |
+          $isRelease = '${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev' && github.event_name == 'push' }}'
+
+          Write-Host "Changelog for ${{ steps.flutter-build.outputs.version }}"
+
+          New-Item changelog.txt
+
+          if ($isRelease -eq 'true') {
+            git branch --contains '${{ steps.flutter-build.outputs.last-version }}'
+            git tags --contains '${{ steps.flutter-build.outputs.last-version }}'
+            git --no-pager log --pretty=format:%s '${{ steps.flutter-build.outputs.last-version }}'..'${{ steps.flutter-build.outputs.version }}' > changelog.txt
+          } else {
+            git --no-pager log --pretty=format:%s ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }} > changelog.txt
+          }
+
+          firebase appdistribution:distribute 'build/app/outputs/apk/production/release/app-production-release.apk' --app ${{ secrets.FIREBASE_APP_ID }} --token '${{ secrets.FIREBASE_TOKEN }}' --groups "internal-testers" --release-notes-file changelog.txt
+        shell: pwsh
+
+  build-success:
+    if: ${{ github.ref != 'refs/heads/main' || github.base_ref != 'main' }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo success!

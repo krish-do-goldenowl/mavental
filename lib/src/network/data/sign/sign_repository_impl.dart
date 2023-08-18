@@ -6,7 +6,7 @@ import 'package:mavental/src/network/model/common/error_code.dart';
 import 'package:mavental/src/network/model/user/user.dart';
 import 'package:mavental/src/network/model/social_user/social_user.dart';
 
-import '../../model/common/result.dart';
+import 'package:mavental/src/network/model/common/result.dart';
 
 class SignRepositoryImpl extends SignRepository {
   @override

@@ -7,7 +7,7 @@ import 'package:mavental/src/features/authentication/model/email_fromz.dart';
 import 'package:mavental/src/network/domain_manager.dart';
 import 'package:mavental/src/router/coordinator.dart';
 
-import '../../../network/model/common/result.dart';
+import 'package:mavental/src/network/model/common/result.dart';
 
 part 'forgot_state.dart';
 

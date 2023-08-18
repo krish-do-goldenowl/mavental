@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../common/indicator.dart';
+import 'package:mavental/widgets/common/indicator.dart';
 
 class XStateLoadingWidget extends StatelessWidget {
   const XStateLoadingWidget({super.key});

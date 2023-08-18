@@ -1,7 +1,7 @@
 import 'package:mavental/src/network/model/common/pagination/pagination_response.dart';
 
-import '../handle.dart';
-import '../result.dart';
+import 'package:mavental/src/network/model/common/handle.dart';
+import 'package:mavental/src/network/model/common/result.dart';
 
 class MPagination<T> {
   MPagination({
