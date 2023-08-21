@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:mavental/src/dialogs/alert_wrapper.dart';
-import 'package:mavental/src/features/authentication/model/email_fromz.dart';
+import 'package:mavental/src/features/authentication/model/email_formz.dart';
 import 'package:mavental/src/network/domain_manager.dart';
 import 'package:mavental/src/router/coordinator.dart';
 

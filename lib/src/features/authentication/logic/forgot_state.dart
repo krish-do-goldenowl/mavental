@@ -3,7 +3,7 @@ part of 'forgot_bloc.dart';
 
 class ForgotState extends Equatable {
   const ForgotState({
-    this.email = const EmailFormzInput.pure(''),
+    this.email = const EmailFormzInput.pure(),
     this.status = FormzSubmissionStatus.initial,
     this.error = '',
   });

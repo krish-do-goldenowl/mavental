@@ -1,18 +1,19 @@
-part of 'signup_bloc.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+part of 'sign_in_bloc.dart';
 
-class SignupState extends Equatable {
-  const SignupState({
+class SignInState extends Equatable {
+  const SignInState({
     this.email = const EmailFormzInput.pure(),
-    this.password = const PasswordFormzInput.pure(''),
-    this.name = const NameFormzInput.pure(''),
+    this.password = const PasswordFormzInput.pure(),
     this.status = FormzSubmissionStatus.initial,
+    this.loginType = MSocialType.email,
     this.message = '',
   });
 
   final EmailFormzInput email;
   final PasswordFormzInput password;
-  final NameFormzInput name;
   final FormzSubmissionStatus status;
+  final MSocialType loginType;
   final String message;
 
   bool get isValidated {
@@ -24,21 +25,21 @@ class SignupState extends Equatable {
         email,
         password,
         status,
-        name,
+        loginType,
       ];
 
-  SignupState copyWith({
+  SignInState copyWith({
     EmailFormzInput? email,
     PasswordFormzInput? password,
     FormzSubmissionStatus? status,
-    NameFormzInput? name,
+    MSocialType? loginType,
     String? message,
   }) {
-    return SignupState(
+    return SignInState(
       email: email ?? this.email,
       password: password ?? this.password,
       status: status ?? this.status,
-      name: name ?? this.name,
+      loginType: loginType ?? this.loginType,
       message: message ?? this.message,
     );
   }

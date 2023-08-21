@@ -66,7 +66,7 @@ class XMultiTextField extends StatelessWidget {
       padding: const EdgeInsets.only(left: 12),
       decoration: const BoxDecoration(
         border: Border(
-          bottom: BorderSide(width: 1, color: Colors.grey),
+          bottom: BorderSide(color: Colors.grey),
         ),
       ),
       child: Row(

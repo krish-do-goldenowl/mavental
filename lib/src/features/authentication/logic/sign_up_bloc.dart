@@ -5,7 +5,7 @@ import 'package:get_it/get_it.dart';
 import 'package:mavental/src/dialogs/alert_wrapper.dart';
 import 'package:mavental/src/dialogs/toast_wrapper.dart';
 import 'package:mavental/src/features/account/logic/account_bloc.dart';
-import 'package:mavental/src/features/authentication/model/email_fromz.dart';
+import 'package:mavental/src/features/authentication/model/email_formz.dart';
 import 'package:mavental/src/features/authentication/model/model_input.dart';
 import 'package:mavental/src/features/authentication/model/name_formz.dart';
 import 'package:mavental/src/network/domain_manager.dart';
@@ -13,10 +13,10 @@ import 'package:formz/formz.dart';
 import 'package:mavental/src/network/model/user/user.dart';
 import 'package:mavental/src/router/coordinator.dart';
 
-part 'signup_state.dart';
+part 'sign_up_state.dart';
 
-class SignupBloc extends Cubit<SignupState> {
-  SignupBloc() : super(const SignupState());
+class SignUpBloc extends Cubit<SignUpState> {
+  SignUpBloc() : super(const SignUpState());
 
   DomainManager get domain => DomainManager();
 

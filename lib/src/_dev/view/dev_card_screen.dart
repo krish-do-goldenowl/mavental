@@ -9,7 +9,6 @@ class DevCardScreen extends StatelessWidget {
     return const DevScreenLayout(
       'Card',
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      children: [],
     );
   }
 }

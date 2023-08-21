@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'view/dev_button_screen.dart';
-import 'view/dev_card_screen.dart';
-import 'view/dev_common_screen.dart';
-import 'view/dev_device_screen.dart';
-import 'view/dev_dialog_screen.dart';
-import 'widget/dev_navigation_title.dart';
+import 'package:mavental/src/_dev/view/dev_button_screen.dart';
+import 'package:mavental/src/_dev/view/dev_card_screen.dart';
+import 'package:mavental/src/_dev/view/dev_common_screen.dart';
+import 'package:mavental/src/_dev/view/dev_device_screen.dart';
+import 'package:mavental/src/_dev/view/dev_dialog_screen.dart';
+import 'package:mavental/src/_dev/widget/dev_navigation_title.dart';
 
 class DevScreen extends StatelessWidget {
   const DevScreen({Key? key}) : super(key: key);

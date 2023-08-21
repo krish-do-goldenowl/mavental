@@ -1,4 +1,4 @@
-import 'meta/pagination_meta.dart';
+import 'package:mavental/src/network/model/common/pagination/meta/pagination_meta.dart';
 
 class MPaginationResponse<T> {
   factory MPaginationResponse.fromJson(Map<String, Object?> json,

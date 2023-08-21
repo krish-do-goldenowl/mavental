@@ -18,7 +18,6 @@ class XHttp {
   factory XHttp() => instance;
   XHttp._internal() {
     final BaseOptions options = BaseOptions(
-      responseType: ResponseType.json,
       validateStatus: (status) {
         return true;
       },

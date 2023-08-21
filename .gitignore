@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/flutter,dart,androidstudio,android,xcode,swift
 # Edit at https://www.toptal.com/developers/gitignore?templates=flutter,dart,androidstudio,android,xcode,swift
 
+### VSCode settings.json
+.vscode/settings.json
+
 ### Google play store credential file
 play_store.json
 

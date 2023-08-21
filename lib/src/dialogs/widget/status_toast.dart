@@ -14,7 +14,6 @@ class XStatusToast extends StatelessWidget {
         color: const Color(0xCC000000),
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
           if (icon != null) ...[icon!, const SizedBox(width: 4)],

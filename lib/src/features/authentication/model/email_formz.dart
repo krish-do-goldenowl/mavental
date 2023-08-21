@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:formz/formz.dart';
 import 'package:mavental/src/localization/localization_utils.dart';
-import 'form_error.dart';
+import 'package:mavental/src/features/authentication/model/form_error.dart';
 
 class EmailFormzInput extends FormzInput<String, FormError> {
   const EmailFormzInput.pure([String value = '']) : super.pure(value);

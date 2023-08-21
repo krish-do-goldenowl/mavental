@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'error_code.dart';
+import 'package:mavental/src/network/model/common/error_code.dart';
 
 class MResult<T> {
   MResult.exception(Object? e) {

@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:formz/formz.dart';
 import 'package:mavental/gen/assets.gen.dart';
-import 'package:mavental/src/features/authentication/logic/signin_bloc.dart';
+import 'package:mavental/src/features/authentication/logic/sign_in_bloc.dart';
 import 'package:mavental/src/localization/localization_utils.dart';
 import 'package:mavental/src/network/model/social_type.dart';
 import 'package:mavental/widgets/common/indicator.dart';
@@ -16,8 +16,8 @@ class SocialListButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const space = SizedBox(height: 20);
-    return BlocBuilder<SigninBloc, SigninState>(
-      builder: (context, SigninState state) {
+    return BlocBuilder<SignInBloc, SignInState>(
+      builder: (context, SignInState state) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -30,7 +30,7 @@ class SocialListButton extends StatelessWidget {
                 busy: state.status.isInProgress &&
                     state.loginType == MSocialType.apple,
                 onPressed: () =>
-                    context.read<SigninBloc>().loginWithApple(context),
+                    context.read<SignInBloc>().loginWithApple(context),
               ),
             ],
             space,
@@ -40,7 +40,7 @@ class SocialListButton extends StatelessWidget {
               busy: state.status.isInProgress &&
                   state.loginType == MSocialType.facebook,
               onPressed: () =>
-                  context.read<SigninBloc>().loginWithFacebook(context),
+                  context.read<SignInBloc>().loginWithFacebook(context),
             ),
             space,
             _buildButton(
@@ -49,7 +49,7 @@ class SocialListButton extends StatelessWidget {
               busy: state.status.isInProgress &&
                   state.loginType == MSocialType.google,
               onPressed: () =>
-                  context.read<SigninBloc>().loginWithGoogle(context),
+                  context.read<SignInBloc>().loginWithGoogle(context),
             ),
           ],
         );

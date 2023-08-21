@@ -94,8 +94,7 @@ class XSmallNumberField extends StatelessWidget {
                         controller: _textController,
                         maxLength: 2,
                         autofocus: true,
-                        keyboardType: const TextInputType.numberWithOptions(
-                            signed: false, decimal: false),
+                        keyboardType: const TextInputType.numberWithOptions(),
                         decoration: InputDecoration(
                             hintText: "0 -> 10",
                             suffixIcon: IconButton(

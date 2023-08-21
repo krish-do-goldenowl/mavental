@@ -63,15 +63,7 @@ class XFirebaseMessage {
 
   Future<void> requestPermission() async {
     try {
-      NotificationSettings settings = await messaging.requestPermission(
-        alert: true,
-        announcement: false,
-        badge: true,
-        carPlay: false,
-        criticalAlert: false,
-        provisional: false,
-        sound: true,
-      );
+      NotificationSettings settings = await messaging.requestPermission();
 
       xLog.i('User granted permission: ${settings.authorizationStatus}');
     } catch (e) {
