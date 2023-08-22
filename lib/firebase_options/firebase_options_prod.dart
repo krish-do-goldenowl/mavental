@@ -70,6 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '158898518103',
     projectId: 'goldenowl-mavental',
     storageBucket: 'goldenowl-mavental.appspot.com',
+    androidClientId:
+        '158898518103-1p5v6egfsr5jbs6prom3kgn36a3cbv34.apps.googleusercontent.com',
     iosClientId:
         '158898518103-1m5n0vbiujj5arbrdb8srituad598s0s.apps.googleusercontent.com',
     iosBundleId: 'com.maverick.go.mavental',

@@ -37,7 +37,7 @@ class ForgotPasswordView extends StatelessWidget {
                     const SizedBox(height: 32.0),
                     XButton(
                       busy: state.status.isInProgress,
-                      enabled: state.email.isValid,
+                      // enabled: state.email.isValid,
                       title: S.of(context).common_next,
                       onPressed: () => context
                           .read<ForgotBloc>()

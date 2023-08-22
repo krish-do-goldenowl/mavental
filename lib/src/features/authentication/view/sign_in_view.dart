@@ -18,21 +18,18 @@ class SignInView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => SignInBloc(),
-      child: Scaffold(
-        extendBodyBehindAppBar: true,
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-        ),
-        body: Container(
-          padding: const EdgeInsets.fromLTRB(24, 0, 24, 20),
-          child: SingleChildScrollView(
-            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-            child: BlocBuilder<SignInBloc, SignInState>(builder: _builder),
-          ),
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      ),
+      body: Container(
+        padding: const EdgeInsets.fromLTRB(24, 0, 24, 20),
+        child: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          child: BlocBuilder<SignInBloc, SignInState>(builder: _builder),
         ),
       ),
     );
@@ -69,7 +66,7 @@ class SignInView extends StatelessWidget {
           key: const Key('loginForm_continue_raisedButton'),
           busy:
               state.status.isInProgress && state.loginType == MSocialType.email,
-          enabled: state.isValidated,
+          // enabled: state.isValidated,
           title: S.of(context).common_next,
           onPressed: () async {
             context.read<SignInBloc>().loginWithEmail(context);

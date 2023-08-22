@@ -20,31 +20,32 @@ class SignUpBloc extends Cubit<SignUpState> {
 
   DomainManager get domain => DomainManager();
 
-  Future signupWithEmail(BuildContext context) async {
-    if (state.status.isInProgress) return;
-    if (state.isValidated == false) {
-      return;
-    }
+  Future signUpWithEmail(BuildContext context) async {
+    // if (state.status.isInProgress) return;
+    // if (state.isValidated == false) {
+    //   return;
+    // }
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
-    final email = state.email.value;
-    final password = state.password.value;
-    final name = state.name.value;
+    const isTrue = 1 < 2 ? true : false;
+    final email = isTrue ? 'email@gmail.com' : state.email.value;
+    final password = isTrue ? 'password' : state.password.value;
+    final name = isTrue ? 'name' : state.name.value;
     final result = await domain.sign
         .signUpWithEmail(email: email, password: password, name: name);
     if (result.isSuccess) {
       emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
       // ignore: use_build_context_synchronously
-      signupDecision(context, result.data!);
+      signUpDecision(context, result.data!);
     } else {
       emit(state.copyWith(status: FormzSubmissionStatus.failure));
-      XAlert.show(title: 'Signup fail', body: result.error);
+      XAlert.show(title: 'signUp fail', body: result.error);
     }
   }
 
-  Future signupDecision(BuildContext context, MUser incomingUser) async {
+  Future signUpDecision(BuildContext context, MUser incomingUser) async {
     GetIt.I<AccountBloc>().onLoginSuccess(incomingUser);
     AppCoordinator.pop();
-    XToast.success('Signup success');
+    XToast.success('Sign up success');
   }
 
   void onEmailChanged(String value) {

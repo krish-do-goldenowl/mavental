@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:mavental/src/network/model/common/error_code.dart';
 
 class MResult<T> {
-  MResult.exception(Object? e) {
+  MResult.exception(Object? e, {String? message}) {
     data = null;
     if (e is PlatformException) {
       error = e.message;
@@ -12,7 +12,7 @@ class MResult<T> {
     } else if (e is FlutterError) {
       error = e.message;
     }
-    error ??= MErrorCode.unknown;
+    error ??= (message ?? MErrorCode.unknown);
   }
   MResult.error(String? error) {
     data = null;
