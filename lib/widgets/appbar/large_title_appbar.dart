@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:mavental/src/theme/colors.dart';
 
 class LargeTitleAppBar extends StatelessWidget {
-  const LargeTitleAppBar(this.title,
-      {super.key, this.hasDivider = false, this.paddingTop = 0});
+  const LargeTitleAppBar(
+    this.title, {
+    super.key,
+    this.hasDivider = false,
+    this.paddingTop = 0,
+  });
 
   final double paddingTop;
   final String title;

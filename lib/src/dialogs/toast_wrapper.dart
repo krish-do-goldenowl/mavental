@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:bot_toast/bot_toast.dart';
 
-import 'widget/loading_alert.dart';
-import 'widget/status_toast.dart';
+import 'package:mavental/src/dialogs/widget/loading_alert.dart';
+import 'package:mavental/src/dialogs/widget/status_toast.dart';
 
 class XToast {
   static CancelFunc? loadingCancel;

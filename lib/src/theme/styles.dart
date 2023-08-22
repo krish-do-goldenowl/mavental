@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'colors.dart';
+import 'package:mavental/src/theme/colors.dart';
 
 class AppStyles {
   static const title = TextStyle(

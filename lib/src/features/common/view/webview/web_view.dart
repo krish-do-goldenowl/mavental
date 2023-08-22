@@ -10,7 +10,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'package:validators/validators.dart';
 
 import 'package:mavental/src/theme/colors.dart';
-import 'model/web_menu_item.dart';
+import 'package:mavental/src/features/common/view/webview/model/web_menu_item.dart';
 
 class WebviewPage extends StatefulWidget {
   const WebviewPage(
@@ -144,7 +144,7 @@ class _WebviewPageState extends State<WebviewPage> {
       padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
       decoration: BoxDecoration(
         color: AppColors.grey4,
-        border: Border.all(width: 1.0, color: Colors.white),
+        border: Border.all(color: Colors.white),
         boxShadow: const [
           BoxShadow(
             color: Color(0x29000000),

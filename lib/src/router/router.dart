@@ -6,17 +6,17 @@ import 'package:mavental/src/features/dashboard/logic/navigation_bar_item.dart';
 import 'package:mavental/src/features/account/profile/view/profile_view.dart';
 import 'package:mavental/src/features/account/view/account_view.dart';
 import 'package:mavental/src/features/authentication/view/forgot_view.dart';
-import 'package:mavental/src/features/authentication/view/signin_view.dart';
-import 'package:mavental/src/features/authentication/view/signup_view.dart';
+import 'package:mavental/src/features/authentication/view/sign_in_view.dart';
+import 'package:mavental/src/features/authentication/view/sign_up_view.dart';
 import 'package:mavental/src/features/dashboard/view/dashboard_view.dart';
 import 'package:mavental/src/features/home/view/home_view.dart';
 import 'package:mavental/src/features/sample/view/sample_detail_view.dart';
 import 'package:mavental/src/features/sample/view/sample_list_view.dart';
 import 'package:mavental/src/features/common/view/not_found_view.dart';
 import 'package:mavental/src/features/photo_view/photo_view_page.dart';
-import 'coordinator.dart';
-import 'extras/photo_view_extra.dart';
-import 'route_name.dart';
+import 'package:mavental/src/router/coordinator.dart';
+import 'package:mavental/src/router/extras/photo_view_extra.dart';
+import 'package:mavental/src/router/route_name.dart';
 
 class AppRouter {
   late final router = GoRouter(
@@ -29,13 +29,13 @@ class AppRouter {
         parentNavigatorKey: AppCoordinator.navigatorKey,
         path: AppRouteNames.signIn.path,
         name: AppRouteNames.signIn.name,
-        builder: (_, __) => const SigninView(),
+        builder: (_, __) => const SignInView(),
         routes: <RouteBase>[
           GoRoute(
             parentNavigatorKey: AppCoordinator.navigatorKey,
             path: AppRouteNames.signUp.subPath,
             name: AppRouteNames.signUp.name,
-            builder: (_, __) => const SignupView(),
+            builder: (_, __) => const SignUpView(),
           ),
           GoRoute(
             parentNavigatorKey: AppCoordinator.navigatorKey,

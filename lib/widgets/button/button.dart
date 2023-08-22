@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mavental/widgets/common/indicator.dart';
 
-import 'model/button_size.dart';
+import 'package:mavental/widgets/button/model/button_size.dart';
 
 /// A button that shows a busy indicator in place of title
 class XButton extends StatelessWidget {

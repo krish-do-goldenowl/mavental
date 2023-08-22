@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mavental/src/dialogs/alert_wrapper.dart';
 import 'package:mavental/src/features/account/logic/account_bloc.dart';
-import 'package:mavental/src/features/authentication/model/email_fromz.dart';
+import 'package:mavental/src/features/authentication/model/email_formz.dart';
 import 'package:mavental/src/features/authentication/model/model_input.dart';
 import 'package:mavental/src/network/model/social_type.dart';
 import 'package:mavental/src/network/domain_manager.dart';
@@ -17,10 +17,10 @@ import 'package:mavental/src/router/coordinator.dart';
 
 import 'package:mavental/src/network/model/common/result.dart';
 
-part 'signin_state.dart';
+part 'sign_in_state.dart';
 
-class SigninBloc extends Cubit<SigninState> {
-  SigninBloc() : super(const SigninState());
+class SignInBloc extends Cubit<SignInState> {
+  SignInBloc() : super(const SignInState());
 
   DomainManager get domain => DomainManager();
 

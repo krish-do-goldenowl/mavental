@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:mavental/src/features/authentication/logic/signup_bloc.dart';
+import 'package:mavental/src/features/authentication/logic/sign_up_bloc.dart';
 import 'package:mavental/src/features/authentication/widget/sign_title.dart';
 import 'package:mavental/src/localization/localization_utils.dart';
 import 'package:mavental/widgets/button/button.dart';
-import 'package:mavental/widgets/froms/input.dart';
+import 'package:mavental/widgets/forms/input.dart';
 
-class SignupView extends StatelessWidget {
-  const SignupView({Key? key}) : super(key: key);
+class SignUpView extends StatelessWidget {
+  const SignUpView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => SignupBloc(),
-      child: BlocBuilder<SignupBloc, SignupState>(
-        builder: (context, SignupState state) {
+      create: (_) => SignUpBloc(),
+      child: BlocBuilder<SignUpBloc, SignUpState>(
+        builder: (context, SignUpState state) {
           return Scaffold(
             body: Container(
               padding: const EdgeInsets.fromLTRB(24, 0, 24, 20),
@@ -31,7 +31,7 @@ class SignupView extends StatelessWidget {
     );
   }
 
-  Widget _builder(BuildContext context, SignupState state) {
+  Widget _builder(BuildContext context, SignUpState state) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
@@ -41,7 +41,7 @@ class SignupView extends StatelessWidget {
         XInput(
           key: const Key('loginForm_NameInput_textField'),
           value: state.name.value,
-          onChanged: context.read<SignupBloc>().onNameChanged,
+          onChanged: context.read<SignUpBloc>().onNameChanged,
           keyboardType: TextInputType.name,
           decoration: InputDecoration(
             labelText: 'Username',
@@ -53,7 +53,7 @@ class SignupView extends StatelessWidget {
         XInput(
           key: const Key('loginForm_emailInput_textField'),
           value: state.email.value,
-          onChanged: context.read<SignupBloc>().onEmailChanged,
+          onChanged: context.read<SignUpBloc>().onEmailChanged,
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
             labelText: 'Email',
@@ -65,7 +65,7 @@ class SignupView extends StatelessWidget {
         XInput(
           value: state.password.value,
           key: const Key('loginForm_passwordInput_textField'),
-          onChanged: context.read<SignupBloc>().onPasswordChanged,
+          onChanged: context.read<SignUpBloc>().onPasswordChanged,
           obscureText: true,
           decoration: InputDecoration(
             hintText: 'Password',
@@ -77,7 +77,7 @@ class SignupView extends StatelessWidget {
           busy: state.status.isInProgress,
           enabled: state.isValidated,
           title: S.of(context).common_next,
-          onPressed: () => context.read<SignupBloc>().signupWithEmail(context),
+          onPressed: () => context.read<SignUpBloc>().signupWithEmail(context),
         ),
         const SizedBox(height: 16.0),
       ],

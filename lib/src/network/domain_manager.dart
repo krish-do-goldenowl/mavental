@@ -1,6 +1,6 @@
 import 'package:mavental/src/network/data/sign/sign_repository_impl.dart';
-import 'blob/data/upload_repository_impl.dart';
-import 'data/user/user_repository_impl.dart';
+import 'package:mavental/src/network/blob/data/upload_repository_impl.dart';
+import 'package:mavental/src/network/data/user/user_repository_impl.dart';
 
 class DomainManager {
   factory DomainManager() {

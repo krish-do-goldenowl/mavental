@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:mavental/widgets/image/image_network.dart';
 
 class XImageAppBar extends SliverPersistentHeaderDelegate {
-  XImageAppBar(
-      {required this.title, required this.banner, this.leading, this.actions}) {
+  XImageAppBar({
+    required this.title,
+    required this.banner,
+    this.leading,
+    this.actions,
+  }) {
     isShow = false;
   }
 

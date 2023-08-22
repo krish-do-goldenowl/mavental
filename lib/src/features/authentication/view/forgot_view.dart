@@ -5,7 +5,7 @@ import 'package:mavental/src/features/authentication/logic/forgot_bloc.dart';
 import 'package:mavental/src/features/authentication/widget/sign_title.dart';
 import 'package:mavental/src/localization/localization_utils.dart';
 import 'package:mavental/widgets/button/button.dart';
-import 'package:mavental/widgets/froms/input.dart';
+import 'package:mavental/widgets/forms/input.dart';
 
 class ForgotPasswordView extends StatelessWidget {
   const ForgotPasswordView({Key? key}) : super(key: key);

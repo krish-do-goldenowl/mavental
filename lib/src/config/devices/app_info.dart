@@ -27,7 +27,6 @@ class AppInfo {
           uid: info.appCodeName,
           name: info.appName,
           model: info.product,
-          isPhysicalDevice: true,
         );
       } else if (Platform.isAndroid) {
         final AndroidDeviceInfo info = await plugin.androidInfo;

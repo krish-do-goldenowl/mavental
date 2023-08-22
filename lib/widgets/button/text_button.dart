@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:mavental/widgets/common/indicator.dart';
-import 'model/button_size.dart';
+import 'package:mavental/widgets/button/model/button_size.dart';
 
 class XTextButton extends StatelessWidget {
   const XTextButton({

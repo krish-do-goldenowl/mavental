@@ -63,7 +63,6 @@ class _XLoadingProgress {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Container(
                         height: _dialogMessage.isEmpty ? 80 : null,

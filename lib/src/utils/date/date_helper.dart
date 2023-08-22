@@ -1,5 +1,5 @@
 import 'package:intl/intl.dart';
-import 'date_time.ext.dart';
+import 'package:mavental/src/utils/date/date_time.ext.dart';
 
 class DateHelper {
   static DateTime getEndDateOfMonth() {

@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mavental/src/router/coordinator.dart';
-import 'navigation_bar_item.dart';
+import 'package:mavental/src/features/dashboard/logic/navigation_bar_item.dart';
 
 class DashboardBloc extends Cubit<XNavigationBarItems> {
   DashboardBloc(XNavigationBarItems current) : super(current);

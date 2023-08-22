@@ -1,6 +1,6 @@
 import 'dart:core';
 
-import 'result.dart';
+import 'package:mavental/src/network/model/common/result.dart';
 part 'status.dart';
 
 class MHandle<T> {

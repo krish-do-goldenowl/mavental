@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mavental/src/theme/styles.dart';
 
-import 'colors.dart';
+import 'package:mavental/src/theme/colors.dart';
 
 class AppTheme {
   static const String? fontFamily = null;
 
   static ThemeData light() => ThemeData(
-        fontFamily: fontFamily,
         scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
 
         /// dialog

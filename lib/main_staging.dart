@@ -5,8 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mavental/src/locator.dart';
 
-import 'firebase_options/firebase_options_stg.dart';
-import 'src/app.dart';
+import 'package:mavental/firebase_options/firebase_options_stg.dart';
+import 'package:mavental/src/app.dart';
 
 Future main() async {
   await initializeApp(

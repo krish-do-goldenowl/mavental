@@ -9,8 +9,8 @@ import 'package:mavental/src/network/domain_manager.dart';
 import 'package:mavental/src/router/router.dart';
 import 'package:mavental/src/services/user_prefs.dart';
 
-import 'features/common/app_bloc/bloc_observer.dart';
-import 'services/firebase_message.dart';
+import 'package:mavental/src/features/common/app_bloc/bloc_observer.dart';
+import 'package:mavental/src/services/firebase_message.dart';
 
 Future initializeApp({String? name, FirebaseOptions? firebaseOptions}) async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -19,7 +19,7 @@ class AccountHomeView extends StatelessWidget {
         body: SafeArea(
           child: CustomScrollView(
             slivers: [
-              const LargeTitleAppBar('Account', paddingTop: 0),
+              const LargeTitleAppBar('Account'),
               SliverPadding(
                 padding: const EdgeInsets.all(8),
                 sliver: SliverList(
