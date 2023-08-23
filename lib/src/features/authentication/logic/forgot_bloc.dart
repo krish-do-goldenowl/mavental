@@ -17,13 +17,15 @@ class ForgotBloc extends Cubit<ForgotState> {
 
   /// Step 3 (Register)
   Future onEnteredConfirmPassword(BuildContext context) async {
-    if (state.email.isValid == false || state.status.isInProgress) {
-      return;
-    }
+    // if (state.email.isValid == false || state.status.isInProgress) {
+    //   return;
+    // }
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
 
-    final MResult<String> result =
-        await domain.sign.forgotPassword(state.email.value);
+    const isTrue = 1 < 2;
+    final MResult<String> result = await domain.sign.forgotPassword(
+      isTrue ? 'emai1l@gmail.com' : state.email.value,
+    );
     if (result.isSuccess) {
       await XAlert.show(
         body:

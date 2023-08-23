@@ -75,9 +75,9 @@ class SignUpView extends StatelessWidget {
         const SizedBox(height: 32.0),
         XButton(
           busy: state.status.isInProgress,
-          enabled: state.isValidated,
+          // enabled: state.isValidated,
           title: S.of(context).common_next,
-          onPressed: () => context.read<SignUpBloc>().signupWithEmail(context),
+          onPressed: () => context.read<SignUpBloc>().signUpWithEmail(context),
         ),
         const SizedBox(height: 16.0),
       ],

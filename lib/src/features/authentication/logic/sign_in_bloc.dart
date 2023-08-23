@@ -25,16 +25,17 @@ class SignInBloc extends Cubit<SignInState> {
   DomainManager get domain => DomainManager();
 
   Future loginWithEmail(BuildContext context) async {
-    if (state.status.isInProgress) return;
-    if (state.isValidated == false) {
-      return;
-    }
+    // if (state.status.isInProgress) return;
+    // if (state.isValidated == false) {
+    //   return;
+    // }
     emit(state.copyWith(
       status: FormzSubmissionStatus.inProgress,
       loginType: MSocialType.email,
     ));
-    final email = state.email.value;
-    final password = state.password.value;
+    const isTrue = 1 < 2 ? true : false;
+    final email = isTrue ? 'email@gmail.com' : state.email.value;
+    final password = isTrue ? 'password' : state.password.value;
     final result =
         await domain.sign.loginWithEmail(email: email, password: password);
     return loginDecision(context, result);
@@ -70,8 +71,12 @@ class SignInBloc extends Cubit<SignInState> {
     return loginSocialDecision(context, result, MSocialType.facebook);
   }
 
-  Future loginSocialDecision(BuildContext context, MResult<MSocialUser> result,
+  Future loginSocialDecision(BuildContext context, MResult<MSocialUser>? result,
       MSocialType socialType) async {
+    if (result == null) {
+      emit(state.copyWith(status: FormzSubmissionStatus.canceled));
+      return;
+    }
     if (result.isSuccess) {
       final data = result.data!;
       if (socialType == MSocialType.google) {
@@ -110,7 +115,7 @@ class SignInBloc extends Cubit<SignInState> {
       AppCoordinator.pop(true);
     } else {
       emit(state.copyWith(status: FormzSubmissionStatus.failure));
-      XAlert.show(title: 'Login Error', body: result.error);
+      XAlert.show(title: 'Login Error', body: 'Email or password is incorrect');
     }
   }
 

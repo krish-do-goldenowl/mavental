@@ -2,11 +2,11 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mavental/src/_dev/dev_screen.dart';
+import 'package:mavental/src/features/authentication/view/sign_in_screen.dart';
 import 'package:mavental/src/features/dashboard/logic/navigation_bar_item.dart';
 import 'package:mavental/src/features/account/profile/view/profile_view.dart';
 import 'package:mavental/src/features/account/view/account_view.dart';
 import 'package:mavental/src/features/authentication/view/forgot_view.dart';
-import 'package:mavental/src/features/authentication/view/sign_in_view.dart';
 import 'package:mavental/src/features/authentication/view/sign_up_view.dart';
 import 'package:mavental/src/features/dashboard/view/dashboard_view.dart';
 import 'package:mavental/src/features/home/view/home_view.dart';
@@ -29,7 +29,7 @@ class AppRouter {
         parentNavigatorKey: AppCoordinator.navigatorKey,
         path: AppRouteNames.signIn.path,
         name: AppRouteNames.signIn.name,
-        builder: (_, __) => const SignInView(),
+        builder: (_, __) => const SignInScreen(),
         routes: <RouteBase>[
           GoRoute(
             parentNavigatorKey: AppCoordinator.navigatorKey,
